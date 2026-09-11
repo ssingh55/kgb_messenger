@@ -184,9 +184,6 @@ public class MessengerActivity extends AppCompatActivity {
      */
     @Override
     public void onBackPressed() {
-        Intent homeScreen = new Intent(Intent.ACTION_MAIN);
-        homeScreen.addCategory(Intent.CATEGORY_HOME);
-        homeScreen.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(homeScreen);
+        super.onBackPressed();
     }
 }
