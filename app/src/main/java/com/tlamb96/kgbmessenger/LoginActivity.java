@@ -23,6 +23,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        getWindow().getDecorView().getRootView().setFilterTouchesWhenObscured(true);
+
         // Setup MD5 hashing.
         try {
             mMessageDigest = MessageDigest.getInstance("MD5");
@@ -97,9 +99,6 @@ public class LoginActivity extends AppCompatActivity {
      */
     @Override
     public void onBackPressed() {
-        Intent homeScreen = new Intent(Intent.ACTION_MAIN);
-        homeScreen.addCategory(Intent.CATEGORY_HOME);
-        homeScreen.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(homeScreen);
+        super.onBackPressed();
     }
 }
